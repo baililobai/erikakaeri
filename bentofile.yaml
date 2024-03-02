@@ -1,0 +1,15 @@
+service: "service:Summarization"
+labels:
+  owner: bentoml-team
+  project: gallery
+include:
+  - "service.py"
+  - "setup.sh"
+python:
+  packages:
+  - torch
+  - transformers
+  - bentoml
+docker:
+  cuda_version: 11.6
+  setup_script: "./setup.sh"
